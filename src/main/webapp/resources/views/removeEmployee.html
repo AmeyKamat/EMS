@@ -1,0 +1,28 @@
+<h2 class="text-center">Remove Employee</h2>
+<div class="col-md-3"></div>
+<div class="col-md-6">
+	<form class="form-horizontal" ng-controller="removeEmployee" novalidate
+		ng-init="initialise()" id="removeEmployeeForm"
+		name="removeEmployeeForm">
+		<div class="form-group">
+			<label for="employeeId" class="control-label col-sm-3 text-right">Employee:
+			</label>
+			<div class="col-sm-9">
+				<select class="form-control" id="employeeId" name="employeeId"
+					ng-model="employeeId"
+					ng-options="employee.employeeId as employee.name+' ('+employee.emailId+')' for employee in employees" required>
+					<option value="" selected>--Please Select--</option>
+				</select> <span class="text-warning"
+					ng-show="removeEmployeeForm.employeeId.$touched && removeEmployeeForm.employeeId.$error.required">Employee
+					cannot be blank</span>
+			</div>
+		</div>
+		<div class="form-group text-center">
+			<button type="submit" class="btn btn-primary" ng-click="remove()">Remove
+				This Employee</button>
+		</div>
+	</form>
+
+
+</div>
+<div class="col-md-3"></div>

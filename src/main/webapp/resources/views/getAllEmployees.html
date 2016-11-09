@@ -1,0 +1,33 @@
+<h2 class="text-center">View All Employees</h2>
+<div ng-controller="getAllEmployees" class="col-md-12">
+	<table class="table table-hover" ng-init="initialise()">
+		<thead>
+			<tr>
+				<th>Employee ID</th>
+				<th>Name</th>
+				<th>Phone No.</th>
+				<th>Email</th>
+				<th>Address</th>
+				<th>DOB</th>
+				<th>DOJ</th>
+				<th>Department</th>
+				<th>Project</th>
+				<th>Role</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="employee in employees">
+				<td>{{employee.employeeId}}</td>
+				<td>{{employee.name}}</td>
+				<td>{{employee.phoneNumber}}</td>
+				<td>{{employee.emailId}}</td>
+				<td>{{employee.address}}</td>
+				<td>{{employee.dateOfBirth}}</td>
+				<td>{{employee.dateOfJoining}}</td>
+				<td>{{employee.department.name}}</td>
+				<td>{{employee.project.name}}</td>
+				<td>{{employee.role.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
